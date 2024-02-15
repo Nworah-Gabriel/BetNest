@@ -42,7 +42,6 @@ MAIN_APPS = [
 CUSTOM_APPS = [
     'BetNestApp',
     'rest_framework',
-    'corsheaders',
     'django_crontabs'
 ]
 
