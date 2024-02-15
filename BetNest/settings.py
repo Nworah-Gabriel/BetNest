@@ -42,7 +42,8 @@ MAIN_APPS = [
 CUSTOM_APPS = [
     'BetNestApp',
     'rest_framework',
-    'django_crontab'
+    'django_crontab',
+    'eth-brownie'
 ]
 
 INSTALLED_APPS = MAIN_APPS + CUSTOM_APPS
