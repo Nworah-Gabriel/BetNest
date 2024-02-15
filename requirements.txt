@@ -33,3 +33,4 @@ urllib3==2.1.0
 eth-brownie
 django_crontab
 bitarray>=1.2.1
+whitenoise
