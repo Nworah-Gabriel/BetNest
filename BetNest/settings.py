@@ -42,10 +42,41 @@ MAIN_APPS = [
 CUSTOM_APPS = [
     'BetNestApp',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'django_crontabs'
 ]
 
 INSTALLED_APPS = MAIN_APPS + CUSTOM_APPS
+
+CRONJOBS = [
+    ('*/1 * * * *', 'core.tasks.check_bal'), # Run the task every 5 minutes
+]
+
+CORS_ALLOW_ALL_ORIGINS: True
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+    'x-korapay-signature',
+    'verif-hash',
+]
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
