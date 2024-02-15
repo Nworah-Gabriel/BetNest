@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-94=a9(g-b%r+g_f6n4g*7)+g*+kr^w&%r_kqct$=+j@q+)m8c(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["betnest.onrender.com", "*.com"]
 
 
 # Application definition
@@ -42,6 +42,7 @@ MAIN_APPS = [
 CUSTOM_APPS = [
     'BetNestApp',
     'rest_framework',
+    'corsheaders'
 ]
 
 INSTALLED_APPS = MAIN_APPS + CUSTOM_APPS
