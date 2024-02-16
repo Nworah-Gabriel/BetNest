@@ -23,9 +23,12 @@ from BetNestApp import views
 #routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'payments', views.PaymentViewSet)
+router.register(r'placed_bets', views.BetViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('testit/', views.Testit),
     path('', include(router.urls)),
     path('userReg/', views.UserReg),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),

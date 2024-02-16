@@ -1,0 +1,6 @@
+networks:
+  Arbitrum-Sepolia:
+    chainid:  421614
+    gasLimit: 20000000
+    timeout: 600
+    url: https://arbitrum-sepolia.infura.io/v3/62ec278d3eb941748d8503e6cadaf637

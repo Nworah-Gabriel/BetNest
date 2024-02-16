@@ -30,6 +30,7 @@ tzdata==2023.4
 tzlocal==5.2
 uritemplate==4.1.1
 urllib3==2.1.0
+vyper
 eth-brownie
 django_crontab
 bitarray>=1.2.1
