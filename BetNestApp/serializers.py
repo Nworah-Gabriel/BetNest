@@ -15,6 +15,11 @@ class PaymentSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['Beneficiary_name', 'amount', 'odds', 'Payment_Date']
 
 
+class UserDetailSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
+
 class BetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Bet

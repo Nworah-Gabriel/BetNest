@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BetNest</title>
+
+    <style>
+        h2{
+            color: blueviolet;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+        #innerdiv{
+            width: 100%;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        img{
+            height: 600px;
+            width: 80%;
+        }
+        @media (max-width: 800px) {
+            img{
+            height: 300px;
+            width: 80%;
+            }   
+        }
+    </style>
+</head>
+<body>
+    <div id="innerdiv">
+        <h2>Welcome to BetNest API</h2>
+        <br>
+        <br>
+        <img src="{% static 'images/details.png' %}" alt="">
+        <br><br>
+        <div>
+            <h2>Available URLs:</h2>
+            <div>
+                <p>
+                    urlpatterns = [
+                        <br>
+                        'admin/'
+                        <br>
+                        ' '
+                        <br>
+                        '/api/'
+                        <br>
+                        'user/reg/'
+                        <br>
+                        'api-auth/'
+                        <br>
+                        'user/details/',
+                        <br>
+                        'user/bet/staked/'
+                        <br>
+                        'user/bet/reg/'
+                        <br>
+                        <br>
+                    ]
+                </p>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

@@ -26,10 +26,14 @@ router.register(r'users', views.UserViewSet)
 router.register(r'payments', views.PaymentViewSet)
 router.register(r'placed_bets', views.BetViewSet)
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('testit/', views.Testit),
+    # path('', views.index),
     path('', include(router.urls)),
-    path('userReg/', views.UserReg),
+    path('user/reg/', views.UserReg),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('user/details/', views.UserDetails),
+    path('user/bet/staked/', views.StakedBets),
+    path('user/bet/reg/', views.BetReg),
 ]
