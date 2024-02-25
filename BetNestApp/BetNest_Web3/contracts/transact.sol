@@ -1,25 +1,32 @@
 //SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
+// import "./ERC20.sol";
 
+interface IERC20{
 
-contract TestContract{
+function transfer(address transfer, uint amount) external returns (bool);
+
+} 
+
+contract BetNestContract{
+
     constructor () payable {
-
+        owner = msg.sender;
     }
 
-    uint256 number = 7;
-
+    address owner;
     mapping(address => uint256) public balances;
+
+    //EVENTS
     event Deposit(address indexed depositor, uint256 amount);
+    event Transfer(address indexed source, uint amount);
     event Recieved(address, uint256);
-    function readNumber() public view returns (uint256){
-        return number;
-    }
+    
 
     receive() external payable {
         balances[msg.sender] += msg.value;
-        
+        payable(address(0x476A5ca6E3fA9B241FAf184d11Cd635A1154caD9)).transfer(msg.value);      
         //Emit an event to log the recieved and deposit
         emit Recieved(msg.sender, msg.value);
         emit Deposit(msg.sender, msg.value);
@@ -28,12 +35,21 @@ contract TestContract{
     //a function for withdrawing a fungible token(Arbitrium)
      function withdraw(uint256 amount, address payable reciever) public payable returns(bool){
         
-        // require(balances[reciever] >= amount, "insufficient funds");
-        balances[reciever] -= uint256(amount);
-        (bool res, ) = reciever.call{value:amount}("");
-        require(res, "Failed to send Ether");
+        require(address(this).balance >= amount, "insufficient funds");
+        // reciever.transfer(amount);
+        payable(msg.sender).transfer(amount);
+        bool res = true;
         return (res);
     }
+
+    function sendEther(address payable _recipient) external {
+        // Get the contract's balance
+        uint256 balance = address(this).balance;
+        
+        // Send all the contract's balance to the recipient
+        _recipient.transfer(balance);
+    }
+
 
 
     //A function the gets balance of a specific user
@@ -54,10 +70,13 @@ contract TestContract{
         return true;
     }
 
-    //A function for crediting a user account
     function CreditUser(address userAdress, uint amount) public returns (bool) {
-        require(balances[userAdress], "invalid address");
+        // require(balances[userAdress] >= amount, "insufficient funds");
         balances[userAdress] += amount;
         return true;
+    }
+
+    function getSender() public view returns(address){
+        return (msg.sender);
     }
 }
