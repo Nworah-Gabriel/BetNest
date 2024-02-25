@@ -15,7 +15,7 @@ const Add = () => {
       width={100}
       height={100}
       alt='add'
-      className='h-auto w-[35rem] '
+      className='h-auto w-[65rem] '
       />
 
     <section className='flex justify-center'>
