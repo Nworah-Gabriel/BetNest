@@ -16,7 +16,7 @@ This project is a decentralized application (DApp) built on the Arbitrum one, a 
 
 - **Transparency:** The entire betting process, including bet creation, participation, and payouts, is transparent and verifiable on the blockchain.
 
-## API Link
+## Relevant Link
 https://betnest.onrender.com
 
 ## Technologies Used
@@ -31,15 +31,15 @@ https://betnest.onrender.com
 - **Backend Framework:** (Django) for building the server side.
 
 ## How to Use
-1. **Connect Wallet:** Users need to connect their Ethereum wallets (e.g., MetaMask) to the DApp.
+- **Connect Wallet:** Users need to connect their Ethereum wallets (e.g., MetaMask) to the DApp.
 
-2. **Browse Bets:** Users can browse existing bets, view their details, and decide whether to participate.
+- **Browse Bets:** Users can browse existing bets, view their details, and decide whether to participate.
 
-3. **Participate in Bets:** To participate in a bet, users need to stake the required amount and select their predicted outcome.
+- **Participate in Bets:** To participate in a bet, users need to stake the required amount and select their predicted outcome.
 
-4. **Wait for Outcome:** After the event is concluded, the smart contract determines the outcome, and payouts are automatically processed.
+- **Wait for Outcome:** After the event is concluded, the smart contract determines the outcome, and payouts are automatically processed.
 
-5. **Withdraw Winnings:** Users can withdraw their winnings from the DApp to their connected wallet.
+- **Withdraw Winnings:** Users can withdraw their winnings from the DApp to their connected wallet.
 
 ## API Installation
 start up the *console(shell)* in an **interactive mode**
