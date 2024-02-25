@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from .models import UserProfile, Bet, Payment
 from django.contrib.auth.models import User
 from .serializers import UserSerializer, PaymentSerializer, BetSerializer, UserDetailSerializer
-from .interact import testit, get_balance, debit_user
+from .interact import get_balance, debit_user
 
 {
     "Username": "SAGGIO",

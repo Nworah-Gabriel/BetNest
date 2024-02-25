@@ -23,7 +23,8 @@ class Bet(models.Model):
     A class based model for storing placed bet
     """
 
-    Staker_name = models.ForeignKey(to="UserProfile", unique=False, on_delete=models.CASCADE)
+    Staker_User_ref = models.ForeignKey(to="UserProfile", unique=False, on_delete=models.CASCADE, null=True)
+    Staker_name = models.CharField(max_length=50, default="Anonymous", null=False, blank=False)
     Staker_KEY = models.CharField(primary_key=True, default=uuid.uuid4, max_length=50, null=False, blank=False)
     amount = models.BigIntegerField(default=0, null=False, blank=False)
     odds = models.CharField(default=0,  max_length=50, null=False, blank=False)
@@ -37,7 +38,7 @@ class Bet(models.Model):
         A string representation of the model class, returning the name of the staker
         """
 
-        return self.Staker_name.username
+        return self.Staker_User_ref.username
 
 
 class Payment(models.Model):

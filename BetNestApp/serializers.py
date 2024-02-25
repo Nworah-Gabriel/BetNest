@@ -30,5 +30,6 @@ class BetSerializer(serializers.HyperlinkedModelSerializer):
             'odds',
             'Is_Winner',
             'date',
-            'game_category'
+            'game_category',
+            'game_title'
             ]
