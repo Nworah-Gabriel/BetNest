@@ -60,6 +60,9 @@ start up the API server with Django framework
 ```
 $ python manage.py runserver
 ```
+![staked bets](https://github.com/Nworah-Gabriel/BetNest/assets/99169106/a5be84e6-dcd3-4d3a-8eb8-9f661bc5ecb8)
+![user details](https://github.com/Nworah-Gabriel/BetNest/assets/99169106/c035d988-4dc5-4581-ba15-f3103fde5ed2)
+
 ![console](https://user-images.githubusercontent.com/59466195/183268981-14576f75-aa4a-4a4b-b25f-c02f551ec91f.png)
 
 ## License
