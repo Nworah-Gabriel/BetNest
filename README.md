@@ -2,88 +2,65 @@
 
 ![1708867378298](https://github.com/Nworah-Gabriel/BetNest/assets/99169106/b18286ef-e48c-4787-9ac3-8b79338e8540)
 
+# AirBnB Clone
+
+![hbnb](https://user-images.githubusercontent.com/59466195/183268975-648aa48a-76f1-486d-8e55-b335e4279a9e.png)
 
 ## Description
-The AirbnB clone is a **web application project** that consists of four(4) different parts:
+This project is a decentralized application (DApp) built on the Arbitrum one, a layer two (L2) scaling solution that operates on top of the Ethereum network blockchain. This DApp allows users to participate in betting activities without the need for intermediaries. It utilizes smart contracts to manage the betting logic, ensuring transparency and security.
 
-- A command interpreter to manipulate data without a visual interface, like in a Shell (perfect for development and debugging)
-- A website (the front-end) that shows the final product to everybody: static and dynamic
-- A database or files that store data (data = objects)
-- An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
+## Features
+Bet Creation: Users can create bets by specifying the conditions, such as the event, outcome options, and stake amount.
 
-## The Console
-This part of the project is to create a *console (a command interpreter)* that uses
-file storage system to manipulate data
-The goal of the *console* part fo the project is to:
-- create a data model
-- manage (create, update, destroy, etc) objects via a console / command interpreter
-- store and persist objects to a file (JSON file)
+Bet Participation: Other users can join existing bets by staking the required amount and selecting their predicted outcome.
 
-The first piece is to manipulate a powerful storage system. This storage engine will
-give us an abstraction between “My object” and “How they are stored and persisted”.
-This means: from your *console code (the command interpreter itself)* and from the
-*front-end and RestAPI* you will build later, you won’t have to pay attention (take care)
-of how your objects are stored.
+Smart Contract Logic: All bet conditions and outcomes are enforced by smart contracts, ensuring trustless execution.
 
-This abstraction will also allow you to change the type of storage easily without updating all of your codebase.
+Payouts: Once the outcome is determined, winnings are automatically distributed to the winning participants based on the predefined rules.
 
-The *console* will be a tool to validate this storage engine.
+Transparency: The entire betting process, including bet creation, participation, and payouts, is transparent and verifiable on the blockchain.
 
-![user details](https://github.com/Nworah-Gabriel/BetNest/assets/99169106/c035d988-4dc5-4581-ba15-f3103fde5ed2)
+## Technologies Used
+Arbitrum(Ethereum Blockchain): The core infrastructure for executing smart contracts and recording bet transactions.
 
+Solidity: The programming language used to write smart contracts.
 
-## Execution
-The *console(shell)* should work like this in **interactive mode**
+Eth-Brownie: A python library for interacting with Ethereum nodes and smart contracts from web applications.
 
-![staked bets](https://github.com/Nworah-Gabriel/BetNest/assets/99169106/a5be84e6-dcd3-4d3a-8eb8-9f661bc5ecb8)
+Frontend Framework: (Next.js) for building the user interface.
 
+Backend Framework: (Django) for building the server side.
 
-```
-~$ ./console.py
-(hbnb) help
+## How to Use
+1. Connect Wallet: Users need to connect their Ethereum wallets (e.g., MetaMask) to the DApp.
 
-Documented commands (type help <topic>):
-========================================
-EOF  create  help  quit
+2. Browse Bets: Users can browse existing bets, view their details, and decide whether to participate.
 
-Undocumented commands:
-======================
-all  destroy  show  update
+3. Participate in Bets: To participate in a bet, users need to stake the required amount and select their predicted outcome.
 
-(hbnb) help quit
-Quit command to exit the program
-(hbnb) quit
-~$
-```
+4. Wait for Outcome: After the event is concluded, the smart contract determines the outcome, and payouts are automatically processed.
 
-But also in **non-interactive mode**: (like the Shell project in C)
+5. Withdraw Winnings: Users can withdraw their winnings from the DApp to their connected wallet.
+
+## API Installation
+start up the *console(shell)* in an **interactive mode**
 
 ```
-$ echo "help" | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
-
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-```
-```
-$./console.py
-(hbnb) EOF
-
-$
+~$ git clone https://github.com/Nworah-Gabriel/BetNest.git
 ```
 
-- All tests should also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
+Navigate to the **cloned Directory**:
+
+```
+$ cd BetNest
+```
+
+start up the API server with Django framework
+
+```
+$ python manage.py runserver
+```
+![console](https://user-images.githubusercontent.com/59466195/183268981-14576f75-aa4a-4a4b-b25f-c02f551ec91f.png)
+
+## License
+This project is licensed under the MIT License.
