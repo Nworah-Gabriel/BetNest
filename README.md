@@ -17,7 +17,9 @@ This project is a decentralized application (DApp) built on the Arbitrum one, a 
 - **Transparency:** The entire betting process, including bet creation, participation, and payouts, is transparent and verifiable on the blockchain.
 
 ## Relevant Link
-https://betnest.onrender.com
+**API Link:** https://betnest.onrender.com
+
+**DApp Link:** https://betnest.vercel.app/
 
 ## Technologies Used
 - **Arbitrum(Ethereum Blockchain):** The core infrastructure for executing smart contracts and recording bet transactions.
