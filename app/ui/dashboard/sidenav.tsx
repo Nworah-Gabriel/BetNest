@@ -13,8 +13,11 @@ import {
   UserIcon,
   CurrencyBangladeshiIcon, 
   CircleStackIcon,
-  PlusSmallIcon, 
-  MagnifyingGlassIcon
+  PlusSmallIcon,
+  BellIcon,
+  MapIcon,
+  MagnifyingGlassIcon,
+  
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
@@ -23,15 +26,15 @@ const navigation = [
   { name: 'Inplay', href: '#', icon: UsersIcon, current: false },
   { name: 'Upcomming', href: '#', icon: FolderIcon, current: false },
   { name: 'Results', href: '#', icon: CalendarIcon, current: false },
-  { name: 'History', href: '#', icon: DocumentDuplicateIcon, current: false },
-  { name: 'Notifications', href: '#', icon: ChartPieIcon, current: false },
+  { name: 'History', href: '#', icon: MapIcon, current: false },
+  { name: 'Notifications', href: '#', icon: BellIcon, current: false },
 ]
 const teams = [
-  { id: 1, name: 'All Games', href: '#', initial: 'H', current: false },
-  { id: 2, name: 'New Games', href: '#', initial: 'T', current: false },
-  { id: 3, name: 'Popular', href: '#', initial: 'W', current: false },
-  { id: 3, name: 'Settings', href: '#', initial: 'W', current: false },
-  { id: 3, name: 'Support', href: '#', initial: 'W', current: false },
+  { id: 1, name: 'All Games', href: '#', initial: 'G', current: false },
+  { id: 2, name: 'New Games', href: '#', initial: 'N', current: false },
+  { id: 3, name: 'Popular', href: '#', initial: 'P', current: false },
+  { id: 3, name: 'Settings', href: '#', initial: 'S', current: false },
+  { id: 3, name: 'Support', href: '#', initial: 'S', current: false },
 ]
 
 function classNames(...classes: string[]) {
