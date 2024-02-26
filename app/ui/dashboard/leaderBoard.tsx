@@ -34,7 +34,7 @@ export default function LatestInvoices() {
   }, []);
 
   return (
-    <div className="flex w-[85vw] md:w-full text-green-500 flex-col md:col-span-4 px-2">
+    <div className="flex w-full text-green-500 flex-col md:col-span-4 px-2">
       <h2 className={`mb-4 font-bold`}>
         Leaderboard
       </h2>

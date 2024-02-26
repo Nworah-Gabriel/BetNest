@@ -43,7 +43,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className=" overflow-x-auto px-2 w-[85vw] lg:w-[75vw]">
+    <div className=" overflow-x-auto px-2 w-full lg:w-[75vw]">
       <div>
         <h2 className="font-bold text-green-500 mb-4 ">Popular games for you</h2>
         <div className="">
