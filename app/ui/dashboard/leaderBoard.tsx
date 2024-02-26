@@ -1,20 +1,27 @@
 'use client'
-import { ArrowPathIcon } from '@heroicons/react/24/outline';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { lusitana } from '@/app/ui/fonts';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-export default function LatestInvoices() { 
-  const [leaderboard, setLeaderboard] = useState([]);
+interface LeaderboardEntry {
+  Staker_name: string;
+  Staker_KEY: string;
+  amount: number;
+  odds: string;
+  Is_Winner: boolean;
+  date: string;
+  game_category: string;
+  game_title: string;
+}
+
+export default function LatestInvoices() {
+  const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://betnest.onrender.com/placed_bets/');
-        if (response.ok) {
-          const data = await response.json();
-          setLeaderboard(data);
+        const response = await axios.get('https://betnest.onrender.com/payments/?format=json');
+        if (response.status === 200) {
+          setLeaderboard(response.data);
         } else {
           console.error('Failed to fetch data:', response.statusText);
         }
@@ -27,7 +34,7 @@ export default function LatestInvoices() {
   }, []);
 
   return (
-    <div className="flex w-full text-green-500 flex-col md:col-span-4 px-2">
+    <div className="flex w-[85vw] md:w-full text-green-500 flex-col md:col-span-4 px-2">
       <h2 className={`mb-4 font-bold`}>
         Leaderboard
       </h2>
@@ -36,37 +43,22 @@ export default function LatestInvoices() {
           <div className="flex flex-row items-center justify-between py-4">
             <p className="font-bold">GAME</p>
             <p className="font-bold">PLAYER</p>
-            <p className="font-bold">BET</p>
-            <p className="font-bold">MULTIPLIER</p>
-            <p className="font-bold">CASHOUT</p>
+            <p className="font-bold hidden lg:block">BET</p>
+            <p className="font-bold hidden lg:block">MULTIPLIER</p>
+            <p className="font-bold hidden lg:block">CASHOUT</p>
           </div>
-          {/* {leaderboard.map((board, i) => (
+          {leaderboard.map((entry, index) => (
             <div
-              key={i}
-              className={clsx(
-                'flex flex-row items-center justify-between py-4',
-                {
-                  'border-t': i !== 0,
-                },
-              )}
+              key={index}
+              className={`flex flex-row items-center justify-between py-4 ${index !== 0 ? 'border-t' : ''}`}
             >
-              <div className="flex items-center">
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold md:text-base">
-                    {board.Beneficiary_name}
-                  </p>
-                  <p className="hidden text-sm text-gray-500 sm:block">
-                    {board.Payment_Date}
-                  </p>
-                </div>
-              </div>
-              <p
-                className={`${lusitana.className} truncate text-sm font-medium md:text-base`}
-              >
-                Amount: {board.amount}, Odds: {board.odds}
-              </p>
+              <p>{entry.game_title}</p>
+              <p>{entry.Staker_name}</p>
+              <p className="hidden lg:block">{entry.amount}</p>
+              <p className="hidden lg:block">{entry.odds}</p>
+              <p className="hidden lg:block">{entry.Is_Winner ? 'Yes' : 'No'}</p>
             </div>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>

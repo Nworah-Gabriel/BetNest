@@ -10,7 +10,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <main>
+    <main >
        <div>
           <Add />
         </div>
@@ -22,11 +22,9 @@ const page = () => {
           <LeaderBoard />  
       </div>
       <div className='w-full flex justify-center mt-8'>
-      <Image 
+      <img 
       src={'/badge.png'}
       alt=''
-      width={100}
-      height={100}
       className='w-[50vw] h-auto'
       />
       </div>

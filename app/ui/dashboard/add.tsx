@@ -11,11 +11,9 @@ const Add = () => {
 
   return (
     <div className='grid lg:flex gap-x-2 gap-y-2 justify-center lg:justify-between text-white mb-6'>
-      <Image src={'/ad001.png'}
-      width={100}
-      height={100}
+      <img src={'/ad001.png'}
       alt='add'
-      className='h-auto w-[65rem] '
+      className='h-auto w-[65rem] rounded-3xl  '
       />
 
     <section className='flex justify-center'>
@@ -47,11 +45,9 @@ const Add = () => {
                    <button type='submit' className='w-2/4 flex justify-center bg-black bg-opacity-30 px-4 py-1 rounded-full border border-black hover:border-green-500 mt-6'>Load</button>
                    </div>
                 </form>
-                <Image
+                <img
                 src={'/badge.png'}
                 alt='badge'
-                width={100}
-                height={100}
                 className='lg:w-[20rem] w-full flex justify-center mt-4'
                 />
             </div>

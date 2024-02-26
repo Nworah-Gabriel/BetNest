@@ -65,7 +65,7 @@ export default function SecondaryNav() {
             </div>
           </div>
 
-          <Disclosure.Panel className="md:hidden">
+          <Disclosure.Panel className="md:hidden w-[85vw]">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
                 <Disclosure.Button
